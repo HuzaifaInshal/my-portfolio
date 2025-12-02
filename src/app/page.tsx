@@ -15,6 +15,9 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import { act, Fragment, useEffect, useState } from "react";
 import Markdown from "react-markdown";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, ChevronRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -25,6 +28,7 @@ export default function Page() {
 
   const [filteredProjects, setFilteredProjects] = useState(PROJECTS);
   const [activeTabs, setActiveTabs] = useState<string[]>(["All"]);
+  const [more, setMore] = useState(false);
 
   useEffect(() => {
     if (activeTabs.includes("All")) {
@@ -87,14 +91,56 @@ export default function Page() {
           </section>
           <section id="about">
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
-              <h2 className="text-xl font-bold">About</h2>
+              <h1 className="text-xl font-bold">About</h1>
             </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-                {DATA.summary}
-              </Markdown>
-            </BlurFade>
+            {/* Accordion */}
+            <div className="mt-2 w-full">
+              <BlurFade delay={BLUR_FADE_DELAY * 4}>
+                <Markdown className="my-2 prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+                  {DATA.summary[0]}
+                </Markdown>
+              </BlurFade>
+
+              <BlurFade delay={BLUR_FADE_DELAY * 4}>
+                <button
+                  onClick={() => setMore((prev) => !prev)}
+                  className="flex w-full items-center gap-3 py-2 text-left group"
+                >
+                  <span className="text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+                    Want to know more ?
+                  </span>
+                  <motion.span transition={{ duration: 0.25 }}>
+                    <ChevronRightIcon
+                      className={cn(
+                        "size-5 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                        more ? "rotate-90" : "rotate-0"
+                      )}
+                    />
+                  </motion.span>
+                </button>
+              </BlurFade>
+
+              <AnimatePresence initial={false}>
+                {more && (
+                  <motion.div
+                    key="accordion-content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <BlurFade delay={BLUR_FADE_DELAY * 4}>
+                      <Markdown className="my-3 prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+                        {DATA.summary[1]}
+                      </Markdown>
+                    </BlurFade>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </section>
+
           <section id="work">
             <div className="flex min-h-0 flex-col gap-y-4">
               <BlurFade delay={BLUR_FADE_DELAY * 5}>

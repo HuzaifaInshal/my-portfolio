@@ -6,59 +6,58 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 export const DATA = {
   name: "Huzaifa Inshal",
   initials: "HI",
-  url: "https://google.com",
+  url: "https://huzaifa-inshal.vercel.app/",
   location: "Karachi, Pakistan",
-  locationLink: "https://maps.app.goo.gl/kBiZRWCkht2mrcDQ6",
   description:
-    "Computer Systems Engineer who specialize in SOC, GRC and Software Development",
-  summary:
-    "My name is Muhammad Huzaifa Inshal, and I’m a Computer Systems Engineer with a strong interest in Software Development, Cybersecurity, and AI. I started my career as a full stack developer, building applications from front to back. Over time, I developed a strong interest in cybersecurity, which led me to pursue SOC and GRC practices. I enjoy working on InfoSec strategies, ensuring systems are both secure and compliant. Alongside this, I’ve also explored areas like DevOps and AI to broaden my skill set. My love for mathematics from an early age played a big role in shaping my engineering mindset and approach to solving complex problems.",
+    "Computer Systems Engineer who specialize in Software Development & Deployment, AI integrations, and more",
+  summary: [
+    "My name is Muhammad Huzaifa Inshal, and an experienced Computer Systems Engineer specializing in full-stack development. Special expertise in Next.js for frontend, Django and NestJS for backend. Skilled in delivering robust, scalable web applications and collaborating effectively with cross-functional teams. Dedicated to quality and staying updated with industry trends.",
+    "I began my journey as a data scientist/analyst, but soon transitioned into software development, starting with Django and later mastering the MERN stack before refining my expertise with NestJS on the backend and Next.js on the frontend. During my university years, I also explored cybersecurity in depth—particularly SOC and GRC practices—while running offensive security scripts using tools like Nmap and BurpSuite in Kali Linux, which strengthened my understanding of networks and security principles. Today, I have strong command over NestJS concepts including real-time communication with sockets, and I am highly advanced in Next.js features such as SSR, SSG, and component-driven architectures. On the deployment side, I am experienced with advanced Vercel setups, environment configurations, and DNS settings, along with foundational deployments on AWS EC2, S3, and RDS, plus basic CI/CD using GitHub Actions. Always eager to grow, I’m currently learning GoLang and enhancing my system design and large-scale software architecture skills.",
+  ],
   avatarUrl: "/me.png",
   skills: [
     {
-      heading: "GRC Frameworks",
-      skills: ["COBIT", "NIST", "ISO-27001"],
-    },
-    {
-      heading: "OffSec and Auditing Tools",
-      skills: ["Nessus", "Nmap", "Wifite"],
-    },
-    {
-      heading: "IT Management and Defender Tools",
-      skills: ["Ms Defender for Endpoint", "Active Directoy", "IBM QRadar"],
-    },
-    {
-      heading: "Coding & Scripting",
+      heading: "Frontend",
       skills: [
-        "Bash Scripting",
-        "Typescript",
-        "Python",
-        "ReactJs",
-        "Redux",
-        "ExpressJs",
-        "NestJs",
-        "NodeJs",
-        "Django",
-        "Booststrap",
-        "Tailwind",
+        "NextJS",
+        "ReactJS/Redux/Zustand",
+        "Bootstrap/TailwindCSS",
         "JQuery",
       ],
     },
     {
+      heading: "Backend",
+      skills: ["NestJS/TypeORM/Prisma", "ExpressJs/NodeJS", "DJango"],
+    },
+    {
       heading: "Databases",
-      skills: ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Redis"],
+      skills: ["PostgreSQL", "MySQL", "MongoDB", "Firebase"],
+    },
+    {
+      heading: "Design (UIUX) and Animations",
+      skills: ["ThreeJS", "GSAP", "Figma", "Framer-motion", "Spline"],
     },
     {
       heading: "Others",
       skills: [
-        "Kali Linux",
-        "Power Query",
-        "CICD",
-        "Docker",
-        "Figma",
-        "ThreeJs",
+        "Docker/Docker-Compose",
+        "CI/CD",
+        "Github Actions",
+        "WebSockets",
         "npm/npx/pip",
+        "MERN Stack",
+        "JavaScript",
+        "TypeScript",
+        "Python",
       ],
+    },
+    {
+      heading: "Cloud Skills",
+      skills: ["AWS S3", "EC2", "RDS"],
+    },
+    {
+      heading: "Cybersecurity Tools",
+      skills: ["Nmap", "Wifite", "Kali"],
     },
     {
       heading: "Soft Skills",
@@ -186,7 +185,7 @@ export const DATA = {
         {
           start: "March 2024",
           location: "Remote - Part time",
-          end: "Present",
+          end: "Sep 2025",
           title: "Full Stack Developer",
           description: [
             "My Full Stack role features work with ReactJs, ExpressJs, AI and Python for business automation and scripting.",
@@ -206,7 +205,7 @@ export const DATA = {
           end: "Feb 2025",
           title: "Frontend Developer",
           description: [
-            "Collaborate with their frontend team to develop user friendly and responsive application with ReactJS.",
+            "Collaborated with their frontend team to develop user friendly and responsive application with ReactJS.",
             "Improving pre-existing and developing new client side code by using frontend languages; Html, CSS, JavaScript.",
           ],
           skills: ["ReactJs"],
